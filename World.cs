@@ -79,7 +79,7 @@ public static class World
         Quest clearSpidersForest =
                     new Quest(
                         QUEST_ID_COLLECT_SPIDER_SILK,
-                        "Collect spider silk",
+                        "Collect spider silk.",
                         "Kill spiders in the spider forest");
 
 
