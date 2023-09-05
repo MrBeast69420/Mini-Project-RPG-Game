@@ -8,5 +8,9 @@ public static class Program{
         p1.AddToInventory(test1);
         p1.AddToInventory(test2);
         p1.ViewInventory();
+        p1.AddToInventory(new HePoMedium());
+        p1.AddToInventory(new HePoSmall());
+        p1.AddToInventory(new HePoLarge());
+        p1.ViewInventory();
     }
 }
