@@ -1,4 +1,6 @@
-ShowMap()
+namespace Game;
+
+
 public static class Map
 {
     public static void ShowMap()
