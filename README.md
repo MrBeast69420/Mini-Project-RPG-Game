@@ -1,2 +1,2 @@
-# mini-projecto
-ye
+# Crazy ass RPG game
+
