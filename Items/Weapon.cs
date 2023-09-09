@@ -1,13 +1,30 @@
 public class Weapon : Item{
-    public String name;
-    public int damage;
-    public int ID;
-    public Weapon(String name, int damage){
-        this.name = name;
-        this.damage = damage;
-        ID++;
+  Random rnd = new Random();
+  public static int AmountOfWeapons = 1;
+  public int ID;
+  public string Name;
+  public int Damage;
+  public int CritChance;
+
+  public Weapon(string name, int damage, int critchance){
+    ID = AmountOfWeapons;
+    this.Name = name;
+    this.Damage = damage;
+    this.CritChance = critchance;
+    AmountOfWeapons++;
+  }
+  public bool CritHit() => rnd.Next(101) > (100 - CritChance);
+  public int Attack(){
+    int attackDamage = Damage;
+    if(CritHit()){
+      attackDamage*= 2;
+      return attackDamage;
     }
-    public override string ToString(){
-      return base.ToString()+": ID: "+ID+" | "+name+" | Damage: "+damage;
-    }
+    else {
+      return attackDamage;
+    } 
+  }
+  public override string ToString(){
+    return base.ToString()+": ID: "+ID+" | "+Name+" | Damage: "+Damage+" | Crit chance: "+CritChance;
+  }
 }
