@@ -1,4 +1,4 @@
-namespace Game
+namespace Game;
 
 public static class Map
 {
