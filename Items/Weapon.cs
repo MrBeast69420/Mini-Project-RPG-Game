@@ -6,6 +6,9 @@ public class Weapon : Item{
   public int Damage;
   public int CritChance;
 
+  public static Weapon test1 = new Weapon("Bow", 10, 25);
+  public static Weapon test2 = new Weapon("Sword", 7, 20);
+
   public Weapon(string name, int damage, int critchance){
     ID = AmountOfWeapons;
     this.Name = name;
