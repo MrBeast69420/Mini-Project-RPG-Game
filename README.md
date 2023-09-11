@@ -1,2 +1,2 @@
-# Crazy ass RPG game
+RPG game
 
