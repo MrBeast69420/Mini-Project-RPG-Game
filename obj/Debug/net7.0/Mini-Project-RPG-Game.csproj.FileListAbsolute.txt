@@ -1,0 +1,4 @@
+/Users/jasonvuong/Desktop/Project-main/Mini-Project-RPG-Game/obj/Debug/net7.0/Mini-Project-RPG-Game.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jasonvuong/Desktop/Project-main/Mini-Project-RPG-Game/obj/Debug/net7.0/Mini-Project-RPG-Game.AssemblyInfoInputs.cache
+/Users/jasonvuong/Desktop/Project-main/Mini-Project-RPG-Game/obj/Debug/net7.0/Mini-Project-RPG-Game.AssemblyInfo.cs
+/Users/jasonvuong/Desktop/Project-main/Mini-Project-RPG-Game/obj/Debug/net7.0/Mini-Project-RPG-Game.csproj.CoreCompileInputs.cache
