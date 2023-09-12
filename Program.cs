@@ -1,5 +1,3 @@
-namespace Game;
-
 static class Program
 {
     public static Player Player;

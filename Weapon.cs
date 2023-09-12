@@ -1,4 +1,4 @@
-public static class Weapon
+public class Weapon
 {
     Random rnd = new Random();
     public string ID;
@@ -8,7 +8,7 @@ public static class Weapon
 
     public Weapon(int id, string name, int damage, int critchance)
     {
-        ID = id;
+        // ID = id;
         Name = name;
         Damage = damage;
         CritChance = critchance;
@@ -18,7 +18,7 @@ public static class Weapon
     public bool CritHit() => rnd.Next(101) > (100 - CritChance);
     
 
-    public int Attack();
+    public int Attack()
     {
         int attackDamage = Damage;
         if(CritHit())

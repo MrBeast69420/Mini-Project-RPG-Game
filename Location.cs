@@ -1,3 +1,4 @@
+
 public class Location
 {
     public string ID;
@@ -10,5 +11,4 @@ public class Location
         Name = name;
         Description = description;
     }
-
 }

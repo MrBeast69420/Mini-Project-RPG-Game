@@ -1,5 +1,3 @@
-namespace Game;
-
 static class Fighting
 {
     public static bool FightingCurrently;

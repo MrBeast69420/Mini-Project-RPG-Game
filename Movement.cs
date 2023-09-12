@@ -1,6 +1,4 @@
-namespace Game;
-
-static class Movement
+public static class Movement
 {
     public static void DoMovement()
     {
