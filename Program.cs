@@ -41,13 +41,13 @@ public static class Program{
         // p1.inventory.ViewInventory();
         // p1.ViewStats();
         Boolean playing = true;
-        // while(playing){
-        //     Console.WriteLine("Options: ");
-        //     // for loop met alle opties
-        //     String userInput = Console.ReadLine();
-        //     if(userInput.ToUpper() == "STOP"){
-        //         playing = false;
-        //     }
-        // }
+        while(playing){
+            Console.WriteLine("Options: ");
+            // for loop met alle opties
+            String userInput = Console.ReadLine();
+            if(userInput.ToUpper() == "STOP"){
+                playing = false;
+            }
+        }
     }
 }
