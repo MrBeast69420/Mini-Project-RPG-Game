@@ -7,8 +7,8 @@ public static class World
     public static readonly List<Location> Locations = new List<Location>();
     public static readonly Random RandomGenerator = new Random();
 
-    public const int WEAPON_ID_RUSTY_SWORD = 1;
-    public const int WEAPON_ID_CLUB = 2;
+    // public const int WEAPON_ID_RUSTY_SWORD = 1;
+    // public const int WEAPON_ID_CLUB = 2;
 
     public const int MONSTER_ID_RAT = 1;
     public const int MONSTER_ID_SNAKE = 2;
@@ -31,62 +31,62 @@ public static class World
     static World()
     {
         PopulateWeapons();
-        PopulateMonsters();
-        PopulateQuests();
+        // PopulateMonsters();
+        // PopulateQuests();
         PopulateLocations();
     }
 
 
     public static void PopulateWeapons()
     {
-        Weapons.Add(new Weapon(WEAPON_ID_RUSTY_SWORD, "Rusty sword", 5));
-        Weapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
+        Weapons.Add(new Weapon("Rusty sword", 5, 10));
+        Weapons.Add(new Weapon("Club", 10, 10));
     }
 
-    public static void PopulateMonsters()
-    {
-        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
+    // public static void PopulateMonsters()
+    // {
+    //     Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
 
 
-        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
+    //     Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
 
 
-        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+    //     Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
 
 
-        Monsters.Add(rat);
-        Monsters.Add(snake);
-        Monsters.Add(giantSpider);
-    }
+    //     Monsters.Add(rat);
+    //     Monsters.Add(snake);
+    //     Monsters.Add(giantSpider);
+    // }
 
-    public static void PopulateQuests()
-    {
-        Quest clearAlchemistGarden =
-            new Quest(
-                QUEST_ID_CLEAR_ALCHEMIST_GARDEN,
-                "Clear the alchemist's garden",
-                "Kill rats in the alchemist's garden ");
-
-
-
-        Quest clearFarmersField =
-            new Quest(
-                QUEST_ID_CLEAR_FARMERS_FIELD,
-                "Clear the farmer's field",
-                "Kill snakes in the farmer's field");
+    // public static void PopulateQuests()
+    // {
+    //     Quest clearAlchemistGarden =
+    //         new Quest(
+    //             QUEST_ID_CLEAR_ALCHEMIST_GARDEN,
+    //             "Clear the alchemist's garden",
+    //             "Kill rats in the alchemist's garden ");
 
 
-        Quest clearSpidersForest =
-                    new Quest(
-                        QUEST_ID_COLLECT_SPIDER_SILK,
-                        "Collect spider silk",
-                        "Kill spiders in the spider forest");
+
+    //     Quest clearFarmersField =
+    //         new Quest(
+    //             QUEST_ID_CLEAR_FARMERS_FIELD,
+    //             "Clear the farmer's field",
+    //             "Kill snakes in the farmer's field");
 
 
-        Quests.Add(clearAlchemistGarden);
-        Quests.Add(clearFarmersField);
-        Quests.Add(clearSpidersForest);
-    }
+    //     Quest clearSpidersForest =
+    //                 new Quest(
+    //                     QUEST_ID_COLLECT_SPIDER_SILK,
+    //                     "Collect spider silk",
+    //                     "Kill spiders in the spider forest");
+
+
+    //     Quests.Add(clearAlchemistGarden);
+    //     Quests.Add(clearFarmersField);
+    //     Quests.Add(clearSpidersForest);
+    // }
 
     public static void PopulateLocations()
     {

@@ -1,6 +1,4 @@
-namespace Game;
-
-class Location
+public class Location
 {
     public int ID;
     public string Name;
@@ -8,10 +6,10 @@ class Location
     public Item ItemRequiredToEnter;
     public Quest QuestAvailableHere;
     public Monster MonsterLivingHere;
-    public Location LocationToNorth = null;
-    public Location LocationToEast = null;
-    public Location LocationToSouth = null;
-    public Location LocationToWest = null;
+    public Location? LocationToNorth = null;
+    public Location? LocationToEast = null;
+    public Location? LocationToSouth = null;
+    public Location? LocationToWest = null;
 
     public Location(int id, string name, string description, Item itemRequiredToEnter = null, Quest questAvailableHere = null,
         Monster monsterLivingHere = null)
@@ -24,7 +22,8 @@ class Location
         this.MonsterLivingHere = monsterLivingHere;
     }
     
-    public Location GetLocationAt(string direction)
+    public Location? GetLocationAt(string direction)
+
     {
         switch (direction)
         {

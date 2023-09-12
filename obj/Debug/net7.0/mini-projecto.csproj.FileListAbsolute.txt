@@ -1,0 +1,14 @@
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\mini-projecto.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\mini-projecto.AssemblyInfoInputs.cache
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\mini-projecto.AssemblyInfo.cs
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\mini-projecto.csproj.CoreCompileInputs.cache
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\bin\Debug\net7.0\mini-projecto.exe
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\bin\Debug\net7.0\mini-projecto.deps.json
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\bin\Debug\net7.0\mini-projecto.runtimeconfig.json
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\bin\Debug\net7.0\mini-projecto.dll
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\bin\Debug\net7.0\mini-projecto.pdb
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\mini-projecto.dll
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\refint\mini-projecto.dll
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\mini-projecto.pdb
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\mini-projecto.genruntimeconfig.cache
+c:\Users\daanp\OneDrive\Documenten\HSRotterdam\ProjectGit\mini-projecto\obj\Debug\net7.0\ref\mini-projecto.dll

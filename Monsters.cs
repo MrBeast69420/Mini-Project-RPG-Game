@@ -1,6 +1,4 @@
-namespace Game;
-
-class Monster
+public class Monster
 {
     public int ID;
     public string Name;
@@ -9,7 +7,7 @@ class Monster
     public int MaximumDamage;
     public int RewardExperience;
     public int RewardGold;
-    public CountedItemList Loot = new CountedItemList();
+    // public CountedItemList Loot = new CountedItemList();
     public int CurrentHitPoints;
   
   

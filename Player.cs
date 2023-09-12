@@ -1,38 +1,82 @@
-﻿namespace Game;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
-class Player
-{
-    public string Name;
-    public int CurrentHitPoints;
-    public int Gold = 0;
-    public int ExperiencePoints = 0;
-    public int Level = 0;
-    public Weapon CurrentWeapon = null;
-    public Location CurrentLocation;
-    public Inventory Inventory = new Inventory();
-    public List<PlayerQuest> QuestLog = new List<PlayerQuest>();
-    
+public class Player{
+    public String name;
+    private int baseDamage;
+    public int baseHealthPoints;
+    public int Gold;
+    public int ExperiencePoints;
+    public int Level;
+    public Location location = null;
+    public Weapon starterWeapon = new Weapon("bat", 5, 10);
+    public Weapon? equipedWeapon = null;
+    public Inventory inventory = new Inventory();
+    // public List<PlayerQuest> QuestLog = new List<PlayerQuest>();
 
-    public Player(string name, int currentHitPoints, int maximumHitPoints, Location currentLocation)
-    {
-        this.Name = name;
-        this.CurrentHitPoints = currentHitPoints;
-        this.CurrentLocation = currentLocation;
+    public Player(String name){
+        this.name = name;
+        baseDamage = 5;
+        baseHealthPoints = 100;
+        inventory.items.Add(starterWeapon);
+        Gold = 0;
+        ExperiencePoints = 0;
+        Level = 1;
     }
 
-    public void QuestLogViewer()
-    {
-        foreach (PlayerQuest quest in QuestLog)
-        {
-            List<string> items = quest.Quest.QuestCompletionItems.Items
-                .Select(i => $"{i.Quantity}x {(i.Quantity == 1 ? i.Item.Name : i.Item.PluralName)}")
-                .ToList();
+    // public void QuestLogViewer()
+    // {
+    //     foreach (PlayerQuest quest in QuestLog)
+    //     {
+    //         List<string> items = quest.Quest.QuestCompletionItems.Items
+    //             .Select(i => $"{i.Quantity}x {(i.Quantity == 1 ? i.Item.Name : i.Item.PluralName)}")
+    //             .ToList();
             
-            Console.WriteLine($"Quest: {quest.Quest.Name}");
-            Console.WriteLine($"Description: {quest.Quest.Description}");
-            Console.WriteLine($"Required items: {string.Join(", ", items)}");
-            Console.WriteLine($"Quest completed: {(quest.IsCompleted ? "Yes" : "No")}");
-            Console.WriteLine();
+    //         Console.WriteLine($"Quest: {quest.Quest.Name}");
+    //         Console.WriteLine($"Description: {quest.Quest.Description}");
+    //         Console.WriteLine($"Required items: {string.Join(", ", items)}");
+    //         Console.WriteLine($"Quest completed: {(quest.IsCompleted ? "Yes" : "No")}");
+    //         Console.WriteLine();
+    //     }
+    // }
+
+
+    public void ViewStats(){
+        Console.WriteLine("Name: "+name);
+        Console.WriteLine("HealthPoints: "+baseHealthPoints);
+        Console.WriteLine("Damage: "+getDamage());
+        Console.Write("Equiped weapon: ");
+        if(equipedWeapon != null){
+            Console.Write(equipedWeapon.Name);
+        }
+        Console.WriteLine();
+        Console.WriteLine("Location: "+location);
+        Console.WriteLine();
+    }
+    public void EquipWeapon(Weapon weapon){
+        if(inventory.IsInInventory(weapon)){
+            if(equipedWeapon != null){
+                UnequipWeapon(equipedWeapon);
+            }
+            equipedWeapon = weapon;
+            inventory.RemoveFromInventory(weapon);   
+        }
+    }
+    public void UnequipWeapon(Weapon weapon){
+        equipedWeapon = null;
+        inventory.AddToInventory(weapon);
+    }
+    public int getDamage(){
+        if(equipedWeapon != null){
+            return baseDamage + equipedWeapon.Damage;
+        } else {
+            return baseDamage;
+        }
+    }
+    public void UseHealingPotion(HealingPotions healingPotion){
+        if(inventory.IsInInventory(healingPotion)){
+            baseHealthPoints += healingPotion.healing;
+            inventory.RemoveFromInventory(healingPotion);
         }
     }
 }
