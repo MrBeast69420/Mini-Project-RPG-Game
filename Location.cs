@@ -23,6 +23,7 @@ public class Location
     }
     
     public Location? GetLocationAt(string direction)
+
     {
         switch (direction)
         {

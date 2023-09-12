@@ -10,7 +10,6 @@ public class Quest
 
     public Item RewardItem;
     public Weapon RewardWeapon;
-
     // public CountedItemList QuestCompletionItems = new CountedItemList();
 
     public Quest(int id, string name, string description, int rewardExperiencePoints, int rewardGold, Item rewardItem,
