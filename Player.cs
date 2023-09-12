@@ -1,41 +1,125 @@
-﻿namespace Game;
+﻿using System.ComponentModel.Design;
+using System.Numerics;
 
 class Player
 {
-    public string Name;
-    public int CurrentHitPoints;
-    public int Gold = 0;
-    public int ExperiencePoints = 0;
-    public int Level = 0;
-    public Weapon CurrentWeapon = null;
+    public Weapon EquippedWeapon;
+    public double Health;
     public Location CurrentLocation;
-    // public Inventory Inventory = new Inventory();
-    // public List<PlayerQuest> QuestLog = new List<PlayerQuest>();
-    
+    public Quest? CurrentQuest;
+    public List<Item> Inventory;
+    public int PlayerLevel;
+    public double AttackMultiplier;
+    public double MaxHealth;
+    public int Experience;
+    public int Gold;
+    public int Block;
 
-    public Player(string name, int currentHitPoints, int maximumHitPoints, Location currentLocation)
+
+    public Player(double health, Weapon equippedWeapon, Location currentLocation)
     {
-        this.Name = name;
-        this.CurrentHitPoints = currentHitPoints;
-        this.CurrentLocation = currentLocation;
+        MaxHealth = health;
+        EquippedWeapon = equippedWeapon;
+        CurrentLocation = currentLocation;
+        CurrentQuest = null;
+        Inventory = new();
+        PlayerLevel = 1;
+        AttackMultiplier = 1;
+        Health = MaxHealth;
+        Experience = 0;
+        Gold = 0;
+        Block = 0;
+
     }
-
-    public void QuestLogViewer()
+    public void Move()
     {
-        foreach (PlayerQuest quest in QuestLog)
+        Console.WriteLine("-------------------------------------------------------------------");
+        Console.WriteLine($"Where would you like to go?\nYou are at: {CurrentLocation.Name}. " +
+                          $"From here you can go:\n{CurrentLocation.Compass()}");
+        string direction = Console.ReadLine().ToUpper();
+        switch (direction)
         {
-            List<string> items = quest.Quest.QuestCompletionItems.Items
-                .Select(i => $"{i.Quantity}x {(i.Quantity == 1 ? i.Item.Name : i.Item.PluralName)}")
-                .ToList();
-            
-            Console.WriteLine($"Quest: {quest.Quest.Name}");
-            Console.WriteLine($"Description: {quest.Quest.Description}");
-            Console.WriteLine($"Required items: {string.Join(", ", items)}");
-            Console.WriteLine($"Quest completed: {(quest.IsCompleted ? "Yes" : "No")}");
-            Console.WriteLine();
+            case "N":
+                if (CurrentLocation.LocationToNorth != null)
+                {
+                    CurrentLocation = CurrentLocation.LocationToNorth;
+                }
+                else
+                {
+                    Console.WriteLine("\nYou are unable to move North.");
+                }
+                break;
+            case "E":
+                if (CurrentLocation.LocationToEast != null)
+                {
+                    CurrentLocation = CurrentLocation.LocationToEast;
+                }
+                else
+                {
+                    Console.WriteLine("\nYou are unable to move East.");
+                }
+                break;
+            case "S":
+                if (CurrentLocation.LocationToSouth != null)
+                {
+                    if (CurrentLocation.Name == "Town square" && Health != MaxHealth) 
+                    {
+                        Health = MaxHealth;
+                        Console.WriteLine($"\nYou've had a good sleep. Your health got regenerated to {Health}.");
+                    }
+                    CurrentLocation = CurrentLocation.LocationToSouth;
+                }
+                else
+                {
+                    Console.WriteLine("\nYou are unable to move South.");
+                }
+                break;
+            case "W":
+                if (CurrentLocation.LocationToWest != null)
+                {
+                    CurrentLocation = CurrentLocation.LocationToWest;
+                }
+                else
+                {
+                    Console.WriteLine("\nYou are unable to move West.");
+                }
+                break;
+            default:
+                Console.WriteLine($"\n{direction} is not a valid direction");
+                break;
         }
     }
-     public void GetItem(Item item)
+    
+    public string Info()
+    {
+        // Prints player level, the health, current quest and equipped weapon(+ stats)
+        Console.WriteLine("-------------------------------------------------------------------");
+        string playerInfo = "";
+        playerInfo += $"Level: {PlayerLevel}";
+        playerInfo += $"\nXP: {Experience}";
+        playerInfo += $"\nHealth: {Health}/{MaxHealth}\n";
+        
+
+        // If there is no quest, the "current quest" will show "none"
+
+        if (CurrentQuest != null)
+        {
+            playerInfo += $"Current quest: {CurrentQuest.Name}\n    {CurrentQuest.Description}\n    Collect: {CurrentQuest.AmountToCollect} {CurrentQuest.ItemToCollect.PluralName}\n";
+        }
+        else
+        {
+            playerInfo += "Current quest: None\n";
+        }
+        playerInfo += $"Weapon: {EquippedWeapon.Name}\n        Damage: {Math.Round(EquippedWeapon.Damage * AttackMultiplier, 2)}\n        Crit chance: {EquippedWeapon.CritChance}\n" +
+            $"Inventory:\n";
+        foreach(Item item in Inventory)
+        {
+            playerInfo += $"{item.Amount} x {item.ItemName()}\n";
+        }
+        return playerInfo;  
+    }
+    
+    public void GetItem(Item item)
     {
         if (Inventory.Contains(item))
         {
