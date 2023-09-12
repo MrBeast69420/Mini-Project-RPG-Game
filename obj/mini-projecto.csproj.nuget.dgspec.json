@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj": {}
+    "C:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj": {}
   },
   "projects": {
-    "c:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj": {
+    "C:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj",
+        "projectUniqueName": "C:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj",
         "projectName": "mini-projecto",
-        "projectPath": "c:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj",
+        "projectPath": "C:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\mini-projecto.csproj",
         "packagesPath": "C:\\Users\\daanp\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\obj\\",
+        "outputPath": "C:\\Users\\daanp\\OneDrive\\Documenten\\HSRotterdam\\ProjectGit\\mini-projecto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\daanp\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,12 +1,10 @@
 public abstract class HealingPotions : Item{
-    public String name;
     public int healing;
 
-    public static HePoLarge hePoLarge = new HePoLarge();
-    public static HePoMedium hePoMedium = new HePoMedium();
-    public static HePoSmall hePoSmall = new HePoSmall();
+    public static HePoLarge hePoLarge = new HePoLarge("Healing Potion Large");
+    public static HePoMedium hePoMedium = new HePoMedium("Healing Potion Medium");
+    public static HePoSmall hePoSmall = new HePoSmall("Healing Potion Small");
 
-    public HealingPotions(){
-        this.name = "Healing Potion";
+    public HealingPotions(String Name):base(Name){
     }
 }

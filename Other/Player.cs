@@ -9,7 +9,7 @@ public class Player{
     public int ExperiencePoints;
     public int Level;
     public Location location = null;
-    public Weapon starterWeapon = new Weapon("bat", 5, 10);
+    public Weapon starterWeapon = new Weapon("Bat", 5, 10);
     public Weapon? equipedWeapon = null;
     public Inventory inventory = new Inventory();
     // public List<PlayerQuest> QuestLog = new List<PlayerQuest>();
@@ -56,15 +56,17 @@ public class Player{
     public void EquipWeapon(Weapon weapon){
         if(inventory.IsInInventory(weapon)){
             if(equipedWeapon != null){
-                UnequipWeapon(equipedWeapon);
+                UnequipWeapon();
             }
             equipedWeapon = weapon;
-            inventory.RemoveFromInventory(weapon);   
+            inventory.RemoveFromInventory(weapon);  
+            Console.WriteLine("Weapon "+weapon.Name+" is equiped.\n"); 
         }
     }
-    public void UnequipWeapon(Weapon weapon){
+    public void UnequipWeapon(){
+        inventory.AddToInventory(equipedWeapon);
+        Console.WriteLine("Weapon "+equipedWeapon.Name+" is unequiped.\n");
         equipedWeapon = null;
-        inventory.AddToInventory(weapon);
     }
     public int getDamage(){
         if(equipedWeapon != null){
@@ -77,6 +79,9 @@ public class Player{
         if(inventory.IsInInventory(healingPotion)){
             baseHealthPoints += healingPotion.healing;
             inventory.RemoveFromInventory(healingPotion);
+            Console.WriteLine("Health increased by: "+healingPotion.healing+"\n");
+        } else {
+            Console.WriteLine("You dont have this kind of potion.\n");
         }
     }
 }

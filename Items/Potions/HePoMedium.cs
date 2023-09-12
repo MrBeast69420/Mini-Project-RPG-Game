@@ -1,9 +1,8 @@
 public class HePoMedium : HealingPotions{
-    public HePoMedium(){
-        this.name = base.name+" Medium";
+    public HePoMedium(String Name): base(Name){
         healing = 30;
     }
     public override string ToString(){
-      return name+ " | Healing: "+healing;
+      return Name+ " | Healing: "+healing;
     }
 }

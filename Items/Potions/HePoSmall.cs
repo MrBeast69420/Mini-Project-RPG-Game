@@ -1,9 +1,8 @@
 public class HePoSmall : HealingPotions{
-    public HePoSmall(){
-        this.name = base.name+" Small";
+    public HePoSmall(String Name):base(Name){
         healing = 20;
     }
     public override string ToString(){
-      return name+ " | Healing: "+healing;
+      return Name+ " | Healing: "+healing;
     }
 }
